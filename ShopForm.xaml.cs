@@ -5,6 +5,7 @@ namespace WedkoApp
     public partial class ShopForm : Window
     {
         private string username; // przechowuje nazwę użytkownika zalogowanego
+        private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\fishShopDB.mdf;Integrated Security=True";
 
         public ShopForm(string username)
         {
@@ -16,24 +17,6 @@ namespace WedkoApp
         {
             // Kod obsługujący przeglądanie produktów
             // Tutaj możesz otworzyć nowe okno lub wykonać inne czynności związane z przeglądaniem produktów
-        }
-
-        private void DodajButton_Click(object sender, RoutedEventArgs e)
-        {
-            // Kod obsługujący dodawanie produktu
-            // Tutaj możesz otworzyć nowe okno lub wykonać inne czynności związane z dodawaniem produktu
-        }
-
-        private void EdytujButton_Click(object sender, RoutedEventArgs e)
-        {
-            // Kod obsługujący edycję produktu
-            // Tutaj możesz otworzyć nowe okno lub wykonać inne czynności związane z edycją produktu
-        }
-
-        private void UsunButton_Click(object sender, RoutedEventArgs e)
-        {
-            // Kod obsługujący usuwanie produktu
-            // Tutaj możesz otworzyć nowe okno lub wykonać inne czynności związane z usuwaniem produktu
         }
 
         private void WylogujButton_Click(object sender, RoutedEventArgs e)
