@@ -1,23 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace WedkoApp
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -31,13 +15,15 @@ namespace WedkoApp
             string password = txtPassword.Password;
 
             // Kod do weryfikacji danych logowania
-            // Możesz porównać wartości username i password z wartościami w bazie danych lub innym źródle
+            // Sprawdź, czy dane logowania są poprawne
 
             if (username == "admin" && password == "admin")
             {
-                // Jeśli dane logowania są prawidłowe, możesz przejść do innej części aplikacji
                 MessageBox.Show("Logowanie pomyślne!");
-                // Tutaj możesz otworzyć inne okno lub wykonać inne czynności po zalogowaniu
+
+                ShopForm shopForm = new ShopForm(username);
+                shopForm.Show();
+                this.Close();
             }
             else
             {
