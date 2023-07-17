@@ -24,5 +24,25 @@ namespace WedkoApp
         {
             InitializeComponent();
         }
+
+        private void ZalogujButton_Click(object sender, RoutedEventArgs e)
+        {
+            string username = txtUsername.Text;
+            string password = txtPassword.Password;
+
+            // Kod do weryfikacji danych logowania
+            // Możesz porównać wartości username i password z wartościami w bazie danych lub innym źródle
+
+            if (username == "admin" && password == "admin")
+            {
+                // Jeśli dane logowania są prawidłowe, możesz przejść do innej części aplikacji
+                MessageBox.Show("Logowanie pomyślne!");
+                // Tutaj możesz otworzyć inne okno lub wykonać inne czynności po zalogowaniu
+            }
+            else
+            {
+                MessageBox.Show("Nieprawidłowe dane logowania!");
+            }
+        }
     }
 }
