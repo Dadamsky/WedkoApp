@@ -1,11 +1,14 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Windows;
+using WedkoApp.Models;
 
 namespace WedkoApp
 {
     public partial class ShopForm : Window
     {
         private string username; // przechowuje nazwę użytkownika zalogowanego
-        private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\fishShopDB.mdf;Integrated Security=True";
+        
 
         public ShopForm(string username)
         {
@@ -15,8 +18,11 @@ namespace WedkoApp
 
         private void PrzegladajButton_Click(object sender, RoutedEventArgs e)
         {
-            // Kod obsługujący przeglądanie produktów
-            // Tutaj możesz otworzyć nowe okno lub wykonać inne czynności związane z przeglądaniem produktów
+            using (YourDatabaseContext dbContext = new YourDatabaseContext())
+            {
+                List<Product> products = dbContext.Products.ToList();
+                listBoxProducts.ItemsSource = products;
+            }
         }
 
         private void WylogujButton_Click(object sender, RoutedEventArgs e)

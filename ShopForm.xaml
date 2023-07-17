@@ -6,6 +6,7 @@
         <!-- Dodaj swoje elementy interfejsu użytkownika dla formularza sklepu wędkarskiego -->
         <TextBlock Text="Witaj w Sklepie Wędkarskim!" FontSize="20" Margin="0 0 0 20" />
         <Button Content="Przeglądaj produkty" Click="PrzegladajButton_Click" Width="150" Margin="0 0 0 10" />
+        <ListBox x:Name="listBoxProducts" Width="200" Height="200" Margin="0 0 0 10" />
         <Button Content="Wyloguj" Click="WylogujButton_Click" Width="150" />
     </StackPanel>
 </Window>
